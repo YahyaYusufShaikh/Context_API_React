@@ -32,7 +32,8 @@ function CountRenderer(){
   </div>
 }
 
-function Buttons({count, setCount}){
+function Buttons({setCount}){
+  const count = useContext(CountContext)
   return <div>
     <button onClick={()=>{setCount(count + 1)}}>Increase</button>
     <button onClick={()=>{setCount(count - 1)}}>Decrease</button>
