@@ -18,19 +18,19 @@ function App() {
 function Count(){
   return <div>
     <CountRenderer></CountRenderer>
-    <Buttonss></Buttons>
+    <Buttons></Buttons>
   </div>
 }
 
 function CountRenderer(){
-  const count = useContext(CountContext);
+  const count = 0;
   return <div>
     {count}
   </div>
 }
 
-function Buttons({setCount}){
-  const count = useContext(CountContext)
+function Buttons(){
+  const count = 0
   return <div>
     <button onClick={()=>{setCount(count + 1)}}>Increase</button>
     <button onClick={()=>{setCount(count - 1)}}>Decrease</button>
