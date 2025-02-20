@@ -1,16 +1,20 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-import { useContext } from 'react'
+import { useContext, useRecoileValue, useRecoilState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import { CountContext } from './context'
+import { customAtom } from './context'
+import { RecoilRoot } from 'recoil'
+
 
 function App() {
 
   return (
     <div>
-      <Count></Count>
+      <RecoilRoot>
+        <Count></Count>
+      </RecoilRoot>
     </div>
   )
 }
@@ -23,14 +27,14 @@ function Count(){
 }
 
 function CountRenderer(){
-  const count = 0;
+  const count = useRecoileValue(customAtom)
   return <div>
     {count}
   </div>
 }
 
 function Buttons(){
-  const count = 0
+  const [count, setCount] = useRecoilState(customAtom)
   return <div>
     <button onClick={()=>{setCount(count + 1)}}>Increase</button>
     <button onClick={()=>{setCount(count - 1)}}>Decrease</button>

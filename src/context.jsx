@@ -1,2 +1,6 @@
-import {createContext} from "react"
-export const CountContext = createContext(0)
+import { atom } from 'recoil'
+
+export const customAtom = atom({
+    key: "customAtom",
+    default: 0
+})
