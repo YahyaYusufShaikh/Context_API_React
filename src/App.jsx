@@ -15,10 +15,10 @@ function App() {
   )
 }
 
-function Count({setCount}){
+function Count(){
   return <div>
     <CountRenderer></CountRenderer>
-    <Buttons setCount={setCount}></Buttons>
+    <Buttonss></Buttons>
   </div>
 }
 
