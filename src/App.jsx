@@ -20,6 +20,7 @@ function App() {
 }
 
 function Count(){
+  console.log()
   return <div>
     <CountRenderer></CountRenderer>
     <Buttons></Buttons>
