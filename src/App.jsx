@@ -6,6 +6,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import { customAtom } from './context'
 import { RecoilRoot, useRecoilValue, useRecoilState, useSetRecoilState } from 'recoil'
+import { countAtom } from './store/atoms/counts'
 
 
 function App() {
@@ -28,14 +29,14 @@ function Count(){
 }
 
 function CountRenderer(){
-  const count = useRecoilValue(customAtom)
+  const count = useRecoilValue(countAtom)
   return <div>
     {count}
   </div>
 }
 
 function Buttons(){
-  const [count, setCount] = useSetRecoilState(customAtom)
+  const [count, setCount] = useSetRecoilState(countAtom)
   return <div>
     <button onClick={()=>{setCount(count + 1)}}>Increase</button>
     <button onClick={()=>{setCount(count - 1)}}>Decrease</button>
