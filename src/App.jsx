@@ -42,6 +42,7 @@ function CountRenderer() {
 // }
 
 function Buttons() {
+  console.log("Button Re-rendered")
   const setCount = useSetRecoilState(countAtom);
   console.log("buttons re-rendererd");
 
