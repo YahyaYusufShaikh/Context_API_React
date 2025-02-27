@@ -22,13 +22,23 @@ function Count() {
 }
 
 function CountRenderer() {
-  console.log("re-rendered")
   const count = useRecoilValue(countAtom);
   
   return <div>
     <b>
       {count}
     </b>
+  </div>
+}
+
+function evenCountRendered(){
+  const count = useRecoilValue(countAtom);
+  const isEven = useMemo(()=>{
+    return count % 2 == 0
+  }, [count])
+
+  return <div>
+    {isEven ? "it is even": null}
   </div>
 }
 
