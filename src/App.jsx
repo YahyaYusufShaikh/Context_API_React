@@ -15,7 +15,6 @@ function App() {
 }
 
 function Count() {
-  console.log("re-render");
   return <div>
     <CountRenderer />
     <Buttons />
@@ -23,6 +22,7 @@ function Count() {
 }
 
 function CountRenderer() {
+  console.log("re-rendered")
   const count = useRecoilValue(countAtom);
   
   return <div>
