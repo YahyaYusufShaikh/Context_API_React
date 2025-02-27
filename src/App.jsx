@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable no-unused-vars */
 import { useContext, useMemo, useState } from "react"
 import { CountContext } from "./context";
@@ -28,17 +29,18 @@ function CountRenderer() {
     <b>
       {count}
     </b>
+    <EvenCountRendered/>
   </div>
 }
 
-function evenCountRendered(){
+
+function EvenCountRendered(){
   const count = useRecoilValue(countAtom);
-  const isEven = useMemo(()=>{
+  const isEven = useMemo(()=> {
     return count % 2 == 0
   }, [count])
-
   return <div>
-    {isEven ? "it is even": null}
+    {isEven ? "it is even": null }
   </div>
 }
 
