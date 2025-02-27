@@ -33,7 +33,7 @@ function CountRenderer() {
 }
 
 function Buttons() {
-
+  const setCount = useSetRecoilState(countAtom)
 
   return <div>
     <button onClick={() => {
