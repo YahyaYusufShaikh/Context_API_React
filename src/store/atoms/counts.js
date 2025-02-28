@@ -14,4 +14,14 @@ export const evenSelector = selector({
         const count = get(countAtom);
         return count % 2
     }
-})
+});
+
+export const filteredTodos = selector({
+    key: 'filteredTodos',
+    get: (props) => {
+        const todos = props.get(countAtom);
+        const filter = props.get(filterAtom);
+        
+        return todos.filter(x => x.title.includes(filter) || x.description.includes("filter"))
+    }
+});
