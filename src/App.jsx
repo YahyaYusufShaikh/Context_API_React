@@ -1,3 +1,5 @@
+/* eslint-disable react/jsx-no-undef */
+/* eslint-disable no-undef */
 /* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable no-unused-vars */
 import { useContext, useMemo, useState } from "react"
@@ -8,9 +10,11 @@ import { countAtom, evenSelector } from "./store/atoms/counts";
 function App() {
   return (
     <div>
+    <ThemeProvider>      
       <RecoilRoot>
         <Count />
       </RecoilRoot>
+    </ThemeProvider>
     </div>
   )
 }
@@ -35,7 +39,6 @@ function CountRenderer() {
 
 
 function EvenCountRendered(){
-  const count = useRecoilValue(countAtom);
   const isEven = useRecoilValue(evenSelector);
   return <div>
     {isEven ? "it is even": null }
